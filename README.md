@@ -1,5 +1,40 @@
-# Oshop
+# Shopping Orgânico
+#### Loja virtual / Carrinho de compras | Angular 8 e Firebase
+##### Live preview:  https://oshop2-ecf56.firebaseapp.com/
 
+### Notas
+Criar arquivo com respectivas configurações do firebase
+$ secrets.ts
+
+    export const secret = {
+      firebase: {
+       apiKey: "",
+       authDomain: "",
+       databaseURL: "",
+       projectId: "",
+       storageBucket: "",
+       messagingSenderId: "",
+       appId: "",
+     }
+   };
+
+## Bootstrap
+Adicionar em styles.css
+
+    @import "~bootstrap/dist/css/bootstrap.css";
+
+
+## Build / Deploy
+$ ng build --prod
+$ firebase deploy
+
+The codes sets free. 
+- DoctorRU
+
+
+Projeto idealizado por Mosh Hamedani / Udemy
+
+## Build
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.4.
 
 ## Development server
