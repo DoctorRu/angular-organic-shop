@@ -9,12 +9,16 @@
     
   <div class="form-group">
       <label for="price">Preço</label>
-      <div class="">
+      <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input #price="ngModel" ngModel name="price" id="price" type="number" class="form-control" required>
+          <input #price="ngModel" ngModel name="price" id="price" type="number" class="form-control" 
+          required
+          [min]="1"
+          >
       </div>
       <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
-          Preencha o preço.
+        <div *ngIf="price.errors.required">Preencha o preço.</div>  
+        <div *ngIf="price.errors.min">O produto não é gratuito.</div>  
       </div>
   </div>
     
@@ -35,9 +39,11 @@
   <div class="form-group">
       <label for="imageUrl">Url da imagem</label>
       <input #imageUrl="ngModel" ngModel name="imageUrl" id="imageUrl" type="text" class="form-control"
-             required>
+             required
+             url>
       <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
-          Digite uma url válida.
+          <div *ngIf="imageUrl.errors.required">Digite uma url.</div>  
+          <div *ngIf="imageUrl.errors.url">Digite uma url válida.</div>  
       </div>
   </div>
   
